@@ -6,11 +6,14 @@ st.title("Harvest Changeout Calculator")
 
 # Inputs for Current Bin Level and Current HFR
 current_bin_level = st.number_input("Current Bin Level:", value=0.0, step=0.1)
-current_hfr = st.number_input("Current HFR:", value=0.0000, step=0.0001, format="%.4f")  # Allows 4 decimal places
+
+# Allow exact display of up to 4 decimal places
+current_hfr = st.text_input("Current HFR:", value="0.0000")
 
 # Button to calculate
 if st.button("Calculate"):
     try:
+        current_hfr = float(current_hfr)  # Convert to float after entering
         target_bin_level = 1020
         minutes_per_hour = 60
         
@@ -29,8 +32,8 @@ if st.button("Calculate"):
         
         # Display result in large font
         st.markdown(
-            f"<div style='text-align: center; font-size: 32px; color: blue;'>"
-            f"**Estimate Changeout Time:**<br>{formatted_time}"
+            f"<div style='text-align: center; font-size: 32px; color: #FFFFFF; background-color: #1A5A37; padding: 10px; border-radius: 8px;'>"
+            f"<strong>Estimated Changeout Time:</strong> {formatted_time}"
             f"</div>", 
             unsafe_allow_html=True
         )
