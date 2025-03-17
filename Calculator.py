@@ -44,7 +44,7 @@ if st.button("Calculate"):
 # Footer
 st.markdown(
     "<div style='text-align: center; font-size: 14px; color: grey;'>"
-    "Developed with ❤️ using Streamlit"
+    "Developed by Radoslaw Kucharski"
     "</div>",
     unsafe_allow_html=True
 )
