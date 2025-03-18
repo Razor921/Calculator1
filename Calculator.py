@@ -15,7 +15,7 @@ if st.button("Calculate"):
         current_bin_level = float(current_bin_level)  # Convert to float after entering
         current_hfr = float(current_hfr)
         
-        target_bin_level = 1020
+        target_bin_level = 1000
         minutes_per_hour = 60
         
         # Perform calculation
