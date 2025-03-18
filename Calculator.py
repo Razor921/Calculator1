@@ -4,16 +4,17 @@ from datetime import datetime, timedelta
 # Title
 st.title("Harvest Changeout Calculator")
 
-# Inputs for Current Bin Level and Current HFR
-current_bin_level = st.number_input("Current Bin Level:", value=0.0, step=0.1)
+# Inputs for Current Bin Level and Current HFR (start empty)
+current_bin_level = st.text_input("Current Bin Level:", value="")
 
-# Allow exact display of up to 4 decimal places
-current_hfr = st.text_input("Current HFR:", value="0.0000")
+current_hfr = st.text_input("Current HFR:", value="")
 
 # Button to calculate
 if st.button("Calculate"):
     try:
-        current_hfr = float(current_hfr)  # Convert to float after entering
+        current_bin_level = float(current_bin_level)  # Convert to float after entering
+        current_hfr = float(current_hfr)
+        
         target_bin_level = 1020
         minutes_per_hour = 60
         
